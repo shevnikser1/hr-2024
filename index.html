@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Интерактивный портрет вакансии</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Sortable/1.14.0/Sortable.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Создание портрета вакансии</h1>
+
+        <form id="vacancy-form">
+            <label for="position">Название позиции:</label>
+            <input type="text" id="position" name="position" required>
+
+            <div class="skills-section">
+                <h2>Софт-навыки</h2>
+                <p>Перетащите навыки в соответствующие колонки</p>
+
+                <div class="lists">
+                    <div class="skills-pool">
+                        <h3>Навыки</h3>
+                        <ul id="skills-pool">
+                            <li class="skill-item" data-value="Коммуникабельность" title="Умение четко и понятно доносить информацию.">Коммуникабельность</li>
+                            <li class="skill-item" data-value="Эмоциональный интеллект" title="Умение распознавать и регулировать свои эмоции.">Эмоциональный интеллект</li>
+                            <li class="skill-item" data-value="Командная работа" title="Умение работать с коллективом для достижения общих целей.">Командная работа</li>
+                            <li class="skill-item" data-value="Адаптивность" title="Гибкость и способность быстро адаптироваться к изменениям.">Адаптивность</li>
+                            <li class="skill-item" data-value="Критическое мышление" title="Способность анализировать и оценивать информацию для принятия решений.">Критическое мышление</li>
+                            <li class="skill-item" data-value="Организованность" title="Умение эффективно организовывать свое время и задачи.">Организованность</li>
+                            <li class="skill-item" data-value="Клиентоориентированность" title="Фокус на удовлетворение потребностей клиента.">Клиентоориентированность</li>
+                            <li class="skill-item" data-value="Решение конфликтов" title="Навык мирного урегулирования разногласий.">Решение конфликтов</li>
+                            <li class="skill-item" data-value="Проактивность" title="Инициативность и умение действовать без указаний.">Проактивность</li>
+                            <li class="skill-item" data-value="Управление стрессом" title="Умение сохранять спокойствие и эффективность в стрессовых ситуациях.">Управление стрессом</li>
+                            <li class="skill-item" data-value="Лидерство" title="Способность вдохновлять и руководить командой.">Лидерство</li>
+                            <li class="skill-item" data-value="Креативное мышление" title="Способность придумывать новые и оригинальные идеи.">Креативное мышление</li>
+                            <li class="skill-item" data-value="Навыки влияния" title="Умение убеждать и влиять на других людей.">Навыки влияния</li>
+                        </ul>
+                    </div>
+
+                    <div class="prioritization">
+                        <div class="main-skills">
+                            <h3>Главные навыки (3)</h3>
+                            <ul id="main-skills" class="drop-zone">
+                                <p class="placeholder">Перетащите сюда главные навыки</p>
+                            </ul>
+                        </div>
+
+                        <div class="secondary-skills">
+                            <h3>Побочные навыки (3)</h3>
+                            <ul id="secondary-skills" class="drop-zone">
+                                <p class="placeholder">Перетащите сюда побочные навыки</p>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <button type="button" id="generate-portrait">Создать портрет</button>
+            </div>
+        </form>
+
+        <div id="result" class="hidden">
+            <h2>Портрет вакансии</h2>
+            <p><strong>Позиция:</strong> <span id="result-position"></span></p>
+            <p><strong>Главные навыки:</strong></p>
+            <ul id="result-main-skills"></ul>
+            <p><strong>Побочные навыки:</strong></p>
+            <ul id="result-secondary-skills"></ul>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
